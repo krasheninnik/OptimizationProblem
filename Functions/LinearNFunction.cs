@@ -17,7 +17,10 @@ namespace Functions
         {
             ThrowIfNonValid(parametrs, point);
 
-            return parametrs;
+            var grad = parametrs.Clone();
+            grad[grad.Count - 1] = 0;
+
+            return grad;
         }
 
         public double Value(IVector parametrs, IVector point)

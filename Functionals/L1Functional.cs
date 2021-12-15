@@ -19,13 +19,19 @@ namespace Functionals
             _vp = vp;
         }
 
+        private IVector GetValue(IDifferentiableFunction f, ValueInPoint x) => f.Gradient(x.Point).MultVector(MathOp.Sign(f.Value(x.Point) - x.Value));
+
         public IVector Gradient(IFunction func)
         {
             var f = func as IDifferentiableFunction;
             if (f is null) throw new ArgumentException("Ожидается функция, реализующая IDifferentiableFunction");
 
-            IVector result = new Vector();
-            foreach (var x in _vp) result.Add(f.Gradient(x.Point).Mult(MathOp.Sign(f.Value(x.Point) - x.Value)));
+            var result = GetValue(f, _vp[0]);
+            for(int i = 1; i < _vp.Count; i++)
+            {
+                result.AddVector(GetValue(f, _vp[i]));
+            }
+
             return result;
         }
 

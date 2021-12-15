@@ -6,13 +6,13 @@ namespace Functions
 {
     public class DifferentiableFunction : Function, IDifferentiableFunction
     {
-        protected readonly Func<IVector, IVector> df;
+        protected readonly Func<IVector, IVector> _grad;
 
-        public DifferentiableFunction(Func<IVector, double> f, Func<IVector, IVector> df) : base(f)
+        public DifferentiableFunction(Func<IVector, double> f, Func<IVector, IVector> grad) : base(f)
         {
-            this.df = df;
+            _grad = grad;
         }
 
-        public IVector Gradient(IVector point) => df(point);
+        public IVector Gradient(IVector point) => _grad(point);
     }
 }

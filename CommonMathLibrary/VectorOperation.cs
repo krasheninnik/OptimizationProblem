@@ -6,7 +6,7 @@ namespace CommonMathLibrary
 {
     public static class VectorOperation
     {
-        public static IVector Mult(this IVector a, double b)
+        public static IVector MultVector(this IVector a, double b)
         {
             for (var i = 0; i < a.Count; i++)
             {
@@ -27,7 +27,7 @@ namespace CommonMathLibrary
         }
 
 
-        public static IVector Add(this IVector a, IVector b)
+        public static IVector AddVector(this IVector a, IVector b)
         {
             if (a.Count != b.Count)
             {
@@ -59,12 +59,12 @@ namespace CommonMathLibrary
 
         public static IVector AddWithCloning(this IVector a, IVector b)
         {
-            return (a.Clone()).Add(b);
+            return (a.Clone()).AddVector(b);
         }
 
         public static IVector MultWithCloning(this IVector a, double b)
         {
-            return (a.Clone()).Mult(b);
+            return (a.Clone()).MultVector(b);
         }
     }
 }

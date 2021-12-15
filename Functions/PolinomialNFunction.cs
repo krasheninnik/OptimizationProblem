@@ -15,7 +15,7 @@ namespace Functions
 
             double res = 0;
             double x = 1;
-            for (int i = parametrs.Count - 1; i >= parametrs.Count; i--)
+            for (int i = parametrs.Count - 1; i >= 0; i--)
             {
                 res += x * parametrs[i];
                 x *= point[0];

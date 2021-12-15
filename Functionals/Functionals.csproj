@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Interface\IDifferentiableFunctional.cs" />
     <Compile Include="Interface\IFunctional.cs" />
-    <Compile Include="Interface\ILeastSquaresFunctional.cs" />
     <Compile Include="L1Functional.cs" />
     <Compile Include="LInfFunctional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

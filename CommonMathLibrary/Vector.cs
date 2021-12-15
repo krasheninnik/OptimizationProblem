@@ -6,7 +6,6 @@ namespace CommonMathLibrary
 {
     public class Vector : List<double>, IVector
     {
-        // its bad :(
         public IVector Clone()
         {
             var newVector = new Vector();

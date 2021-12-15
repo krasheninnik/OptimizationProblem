@@ -6,13 +6,13 @@ namespace Functions
 {
     public class Function : IFunction
     {
-        protected readonly Func<IVector, double> F;
+        protected readonly Func<IVector, double> _f;
 
         public Function(Func<IVector, double> f)
         {
-            F = f;
+            _f = f;
         }
 
-        public double Value(IVector point) => F(point);
+        public double Value(IVector point) => _f(point);
     }
 }

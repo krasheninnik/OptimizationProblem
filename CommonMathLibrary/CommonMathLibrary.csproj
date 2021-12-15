@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IMatrix.cs" />
     <Compile Include="Interface\IVector.cs" />
-    <Compile Include="MathOperation.cs" />
-    <Compile Include="Matrix.cs" />
-    <Compile Include="MatrixOperation.cs" />
+    <Compile Include="MathOp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vector.cs" />
     <Compile Include="VectorOperation.cs" />
